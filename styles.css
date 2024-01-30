@@ -1,32 +1,44 @@
 :root{
-    --building-color1: #999;
+    --building-color1: #6d6a6a;
     --building-color2: #c2d;
-    --building-color3: #c25;
-    --building-color4: #5819ec;
+    --building-color3: rgb(215, 98, 133);
+    --building-color4: #4e18ce;
+    --building-color5: #179432;
+    --building-color6: #ecc919;
+    --building-color7: #ec7f19;
+    --building-color8: #ec5519;
+    --building-color9: #ec1955;
+    --building-color10: #403a3a;
+    --window-color1: black;
+    --window-color2: #8cd9b3;
 }
+
+
 
 *{
     border: 1px solid black;
   box-sizing: border-box;
 
 }
-/*@media (min-width: 560px) and (max-width: 1199px){
+@media (min-width: 560px) and (max-width: 1199px){
     *{
         width: auto;
     }
-}*/
+}
 body{
     height: 100vh;
     margin: 0;
     overflow: hidden;
     background-color: lightskyblue;
   }
-  .background-buildings{
+  .background-buildings, .foreground-buildings {
     width: 100%;
     height: 100%;
     display: flex;
   align-items: flex-end;
   justify-content: space-evenly;
+  position: absolute;
+  top: 0;
   }  
   .bb1{
     width: 10%;
@@ -37,14 +49,26 @@ body{
   /*Variable declarations begin with two dashes (-)
    and are given a name and a value like this:
     --variable-name: value;*/
-    
+   
+  }
+
+  .bb1-window{
+    height: 10%;
+    /*Gradients in CSS are a way to transition
+     between colors across the distance of an element*/
+    background: linear-gradient(
+        var(--building-color1),
+        var(--window-color1)
+      );
+     
   }
   /*To use a variable, put the variable name in parentheses with var in front of them like this: var(--variable-name). Whatever value you
    gave the variable will be applied to whatever property you use it on.*/
   .bb1a{
     width: 70%;
-    height: 10%;
     background-color: var(--building-color1);
+    
+     
   }
   .bb1b{
     width: 80%;
@@ -60,6 +84,10 @@ body{
     width: 100%;
     height: 70%;
     background-color: var(--building-color1);
+    background: linear-gradient(lightcoral,
+        var(--building-color1),
+        var(--window-color1)
+      );
   }
   /*The property will use the fallback value
    when there's a problem with the variable.*/
@@ -78,12 +106,19 @@ body{
     width: 70%;
     height: 10%;
     background-color: var(--building-color2);
+  }*/
+  /*Gradient transitions often gradually change from one color to another.*/
+  .bb2b {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+       var(--building-color2) 0%,
+    var(--building-color2) 6%,
+    var(--window-color2) 6%,
+    var(--window-color2) 9%
+    );
   }
-  .bb2b{
-    width: 80%;
-    height: 10%;
-    background-color: var(--building-color2);
-  }
+  /*
   .bb2c{
     width: 90%;
     height: 10%;
@@ -153,9 +188,47 @@ body{
     background-color: var(--building-color4);
   }*/
 
-  .foreground-buildings{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-  }
+  
+
+  .fb1{
+    width: 10%;
+    height: 60%;
+    background-color: var(--building-color5);
+}
+.fb2{
+    width: 10%;
+    height: 40%;
+    background-color: var(--building-color6);
+}
+.fb3{
+    width: 10%;
+    height: 35%;
+    background-color: var(--building-color7);
+}
+.fb4{
+   
+     width: 8%;
+    height: 45%;
+    background-color: var(--building-color8);
+    position: relative;
+    left: 10%;
+}
+.fb5{
+    width: 10%;
+    height: 33%;
+    background-color: var(--building-color9);
+    position: relative;
+    right: 10%;
+}
+.fb6{
+    width: 9%;
+    height: 38%;
+    background-color: var(--building-color10);
+    background: linear-gradient(lightcoral,
+        var(--building-color1),
+        var(--window-color1)
+      );
+}
+
+
+    
